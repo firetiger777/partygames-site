@@ -56,10 +56,17 @@ folder is the source of truth; that repo is a publish target.
 
 ```bash
 bash scripts/deploy-site.sh "what changed"
+
+# publish the content WITHOUT claiming polargamesinc.com (use until DNS is pointed)
+SKIP_CNAME=1 bash scripts/deploy-site.sh "what changed"
 ```
 
 The script clones the site repo, replaces its contents with this folder, commits, and pushes.
 GitHub Pages redeploys within a minute or so.
+
+**Current state (2026-08-09):** every page is deployed and live at the
+`firetiger777.github.io/partygames-site/…` URLs, published with `SKIP_CNAME=1`, so **no CNAME is
+live and nothing redirects**. The domain is claimed only after the DNS below is in place.
 
 ## One-time setup
 
@@ -69,8 +76,11 @@ GitHub Pages redeploys within a minute or so.
 > the domain still has no DNS would redirect them to a host that does not resolve, i.e. it would
 > break the live privacy/support pages. DNS first, then `deploy-site.sh`.
 
-**1. Dynadot DNS** (Domains → polargamesinc.com → DNS Settings). Delete any parking/forwarding
-records first, then set:
+**1. Dynadot DNS** — ✅ **done 2026-08-09** via `node scripts/dynadot-dns.mjs set-github-pages`
+(needs `. ./.env.store.local` first). Verify any time with `node scripts/dynadot-dns.mjs get`.
+
+To do it by hand instead (Domains → polargamesinc.com → DNS Settings): delete any
+parking/forwarding records first, then set:
 
 | Type | Host / Name | Value |
 |------|-------------|-------|
