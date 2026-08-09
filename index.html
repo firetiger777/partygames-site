@@ -3,71 +3,239 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Party Games — Support</title>
+<title>Polar Games Inc</title>
+<meta name="description" content="Polar Games Inc is an independent studio making party games for phones. No accounts, no ads, no tracking.">
+<link rel="canonical" href="https://polargamesinc.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Polar Games Inc">
+<meta property="og:title" content="Polar Games Inc">
+<meta property="og:description" content="An independent studio making party games for phones. No accounts, no ads, no tracking.">
+<meta property="og:url" content="https://polargamesinc.com/">
+<meta property="og:image" content="https://polargamesinc.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
-    --bg:#FFFDF5; --card:#FFFFFF; --border:#E8DECF; --ink:#1A1A22; --dim:#6E6A78;
-    --accent:#8B3DFF; --magenta:#FF2DAA; --teal:#00B3A4; --green:#0FB85A;
+    --deep:#0A2540; --polar:#0B84D8; --ice:#7FD8FF;
+    --bg:#F5FAFF; --card:#FFFFFF; --border:#DCE8F5;
+    --ink:#14223A; --dim:#5A6B85; --faint:#93A3BA;
+    --accent:#8B3DFF; --magenta:#FF2DAA; --green:#0FB85A; --gold:#B57A00;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-  .hero{background:linear-gradient(150deg,var(--accent),var(--magenta));color:#fff;padding:72px 24px 88px;text-align:center}
-  .kicker{font-size:14px;font-weight:900;letter-spacing:3px;opacity:.92}
-  .hero h1{font-size:clamp(40px,9vw,68px);font-weight:900;letter-spacing:-1px;margin-top:10px}
-  .hero p{font-size:clamp(16px,4vw,20px);font-weight:600;opacity:.95;margin-top:14px}
-  .emojis{font-size:40px;margin-top:24px;letter-spacing:10px}
-  .wrap{max-width:720px;margin:-48px auto 64px;padding:0 20px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;margin-top:24px;box-shadow:0 18px 40px rgba(0,0,0,.06)}
-  h2{font-size:24px;font-weight:900;margin-bottom:8px}
-  .q{font-weight:800;margin-top:20px}
-  .a{color:var(--dim);margin-top:4px}
-  a.btn{display:inline-block;background:var(--green);color:#fff;font-weight:800;text-decoration:none;padding:16px 28px;border-radius:999px;margin-top:18px}
-  a{color:var(--accent);font-weight:700}
-  .foot{text-align:center;color:var(--dim);font-size:13px;padding:0 20px 48px}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--polar);font-weight:700}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,37,64,.94);
+    backdrop-filter:blur(8px);color:#fff}
+  .bar{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+  .mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:900;
+    letter-spacing:.5px;font-size:16px}
+  .mark img{width:26px;height:26px}
+  .bar nav{margin-left:auto;display:flex;gap:20px}
+  .bar nav a{color:#fff;opacity:.85;text-decoration:none;font-size:14px;font-weight:700}
+  .bar nav a:hover{opacity:1}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--deep) 0%,#0C5E9E 55%,var(--polar) 100%);
+    color:#fff;text-align:center;padding:76px 20px 150px;position:relative;overflow:hidden}
+  .kicker{font-size:13px;font-weight:900;letter-spacing:3px;color:var(--ice)}
+  .hero h1{font-size:clamp(34px,7vw,60px);font-weight:900;letter-spacing:-1px;margin-top:12px;
+    line-height:1.08;max-width:18em;margin-inline:auto}
+  .hero p{font-size:clamp(16px,3.4vw,20px);font-weight:600;opacity:.92;margin:16px auto 0;max-width:34em}
+  .fan{display:flex;justify-content:center;align-items:flex-end;gap:14px;margin-top:44px;
+    max-width:620px;margin-inline:auto}
+  .fan img{width:calc((100% - 28px)/3);max-width:190px;border-radius:16px;
+    box-shadow:0 22px 50px rgba(0,0,0,.34)}
+  .fan img:nth-child(1){transform:rotate(-6deg) translateY(14px)}
+  .fan img:nth-child(3){transform:rotate(6deg) translateY(14px)}
+
+  /* layout */
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .pull{margin-top:-96px;position:relative;z-index:5}
+  section.block{padding:56px 0 8px}
+  h2{font-size:clamp(24px,4vw,32px);font-weight:900;letter-spacing:-.5px}
+  .lede{color:var(--dim);margin-top:10px;max-width:46em;font-size:17px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:30px;
+    box-shadow:0 18px 44px rgba(10,37,64,.08)}
+
+  /* game card */
+  .game{display:grid;grid-template-columns:1fr;gap:26px}
+  .game>*{min-width:0}
+  .gtitle{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .gtitle h3{font-size:clamp(24px,4.6vw,34px);font-weight:900;letter-spacing:-.5px}
+  .badge{font-size:11px;font-weight:900;letter-spacing:1.6px;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;background:#F2E8FF;color:#6A21D6}
+  .badge.soon{background:#E9F1FB;color:#2C5F91}
+  .gsub{color:var(--magenta);font-weight:800;margin-top:6px}
+  .gbody{color:var(--dim);margin-top:12px;font-size:17px}
+  ul.ticks{list-style:none;margin-top:16px;display:grid;gap:8px}
+  ul.ticks li{color:var(--dim);padding-left:26px;position:relative}
+  ul.ticks li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;
+    border-radius:3px;background:var(--green)}
+  .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .btn{display:inline-block;text-decoration:none;font-weight:800;padding:15px 26px;border-radius:999px;
+    background:var(--magenta);color:#fff;border:0}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--border)}
+  .soonnote{color:var(--faint);font-size:14px;font-weight:700}
+
+  /* screenshot strip */
+  .strip{display:flex;gap:14px;overflow-x:auto;padding:4px 0 10px;scroll-snap-type:x mandatory}
+  .strip img{width:190px;flex:0 0 auto;border-radius:16px;border:1px solid var(--border);
+    box-shadow:0 12px 28px rgba(10,37,64,.12);scroll-snap-align:start}
+
+  /* value grid */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+  .grid3 .card{padding:26px}
+  .grid3 h3{font-size:19px;font-weight:900}
+  .grid3 p{color:var(--dim);margin-top:8px;font-size:15px}
+  .dot{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-size:20px;margin-bottom:14px;background:#EAF4FF}
+
+  /* contact */
+  .contact{background:linear-gradient(160deg,var(--deep),#0C5E9E);color:#fff;border-radius:24px;
+    padding:40px 30px;text-align:center;margin-top:26px}
+  .contact h2{color:#fff}
+  .contact p{opacity:.9;margin-top:10px}
+  .contact .btn{background:var(--green);margin-top:20px}
+  .contact a{color:var(--ice)}
+
+  footer{margin-top:64px;border-top:1px solid var(--border);padding:28px 20px 48px;text-align:center}
+  footer p{color:var(--dim);font-size:14px}
+  footer nav{margin-top:10px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  footer nav a{font-size:14px}
+
+  @media (min-width:820px){
+    .game{grid-template-columns:1.05fr .95fr;align-items:center}
+  }
+  /* narrow phones: let the bar wrap instead of forcing the page wider than the viewport */
+  @media (max-width:560px){
+    .bar{flex-wrap:wrap;justify-content:center;gap:8px 16px}
+    .mark{font-size:15px}
+    .bar nav{margin-left:0;width:100%;justify-content:center;gap:18px}
+    .card{padding:26px 20px}
+    .contact{padding:34px 22px}
+  }
 </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="kicker">PARTY GAMES</div>
-    <h1>Support</h1>
-    <p>Pass-the-phone party games for your whole group.</p>
-    <div class="emojis">🎯 🤐 🙈</div>
-  </header>
 
-  <main class="wrap">
-    <section class="card">
+<div class="topbar">
+  <div class="bar">
+    <a class="mark" href="./"><img src="favicon.svg" alt="">POLAR GAMES INC</a>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="kicker">POLAR GAMES INC</div>
+  <h1>Party games for the people in the room with you.</h1>
+  <p>We build simple, loud, easy-to-explain games for phones. Everyone plays on their own
+    screen, nobody makes an account, and nobody sits through an ad.</p>
+  <div class="fan">
+    <img src="cantsay/img/01.png" alt="Can't Say That! red team versus blue team" width="540" height="960">
+    <img src="cantsay/img/02.png" alt="Can't Say That! players guessing the word" width="540" height="960">
+    <img src="cantsay/img/04.png" alt="Can't Say That! room code screen" width="540" height="960">
+  </div>
+</header>
+
+<main>
+  <div class="wrap pull">
+    <section class="card game" id="games">
+      <div>
+        <div class="gtitle">
+          <h3>Can't Say That!</h3>
+          <span class="badge">Our first game</span>
+        </div>
+        <div class="gsub">The online forbidden word game.</div>
+        <p class="gbody">Describe the word on your card to your team without saying any of the
+          words underneath it. The other team is watching, and they will catch you. Host a room,
+          share a 4 letter code, and everyone joins from their own phone.</p>
+        <ul class="ticks">
+          <li>2 to 8 players in two teams, Red against Blue</li>
+          <li>Play in the same room or in different cities</li>
+          <li>No account, no sign up, just a nickname</li>
+          <li>Free, with no ads and no interruptions</li>
+          <li>English and Portuguese (Brazil)</li>
+        </ul>
+        <div class="row">
+          <a class="btn" href="cantsay/">About this game</a>
+          <a class="btn ghost" href="cantsay/privacy.html">Privacy policy</a>
+        </div>
+        <p class="row soonnote">Coming soon to the App Store and Google Play.</p>
+      </div>
+      <div>
+        <div class="strip">
+          <img src="cantsay/img/02.png" alt="Guess the word" width="540" height="960" loading="lazy">
+          <img src="cantsay/img/03.png" alt="Catch the forbidden word" width="540" height="960" loading="lazy">
+          <img src="cantsay/img/04.png" alt="Host the party" width="540" height="960" loading="lazy">
+          <img src="cantsay/img/05.png" alt="Win the match" width="540" height="960" loading="lazy">
+          <img src="cantsay/img/06.png" alt="No ads, just the game" width="540" height="960" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What we make</h2>
+      <p class="lede">Polar Games Inc is a small independent studio. Our games are built to be
+        handed to a group of friends and understood in about thirty seconds, on whatever phones
+        happen to be in the room.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="dot">🎉</div>
+          <h3>Made for a group</h3>
+          <p>Teams, timers, and shouting. These are games for a table of people, not for playing
+            alone on a commute.</p>
+        </div>
+        <div class="card">
+          <div class="dot">🔒</div>
+          <h3>Nothing to sign up for</h3>
+          <p>No accounts, no analytics, no advertising, no tracking. You type a nickname and you
+            are playing.</p>
+        </div>
+        <div class="card">
+          <div class="dot">📱</div>
+          <h3>Everyone on their own phone</h3>
+          <p>One player hosts a room and shares a short code. Everyone else joins from wherever
+            they are.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>More on the way</h2>
+      <p class="lede">Can't Say That! is the first game we are releasing. Several more party
+        games are in development and in playtesting now, and they will show up here as they are
+        ready.</p>
+    </section>
+
+    <section class="contact" id="contact">
       <h2>Get in touch</h2>
-      <p class="a">Questions, bugs, or feedback? We'd love to hear from you. We usually reply within
-      a couple of days.</p>
-      <a class="btn" href="mailto:polargamesinc@gmail.com?subject=Party%20Games%20support">Email us</a>
-      <p class="a" style="margin-top:14px">Or write to <a href="mailto:polargamesinc@gmail.com">polargamesinc@gmail.com</a>.</p>
+      <p>Questions, bug reports, press, or business. We read everything and usually reply
+        within a couple of days.</p>
+      <a class="btn" href="mailto:polargamesinc@gmail.com?subject=Polar%20Games%20Inc">Email us</a>
+      <p>Or write to <a href="mailto:polargamesinc@gmail.com">polargamesinc@gmail.com</a>.</p>
     </section>
+  </div>
+</main>
 
-    <section class="card">
-      <h2>FAQ</h2>
+<footer>
+  <p>&copy; 2026 Polar Games Inc. All rights reserved.</p>
+  <nav>
+    <a href="cantsay/">Can't Say That!</a>
+    <a href="cantsay/privacy.html">Can't Say That! privacy</a>
+    <a href="support.html">Party Games support</a>
+    <a href="privacy.html">Party Games privacy</a>
+    <a href="mailto:polargamesinc@gmail.com">Contact</a>
+  </nav>
+</footer>
 
-      <div class="q">Do I need the internet to play?</div>
-      <div class="a">No. Party Games runs fully offline on one device — there's nothing to connect to.</div>
-
-      <div class="q">Do I need an account?</div>
-      <div class="a">No accounts, no sign-up. Open the app and play.</div>
-
-      <div class="q">How many players?</div>
-      <div class="a">It's a pass-the-phone game for a group. Play solo or as two teams (Red vs Blue),
-      over 1–5 rounds.</div>
-
-      <div class="q">Why does "What am I?" ask for motion access?</div>
-      <div class="a">That game uses the phone's tilt so you can tilt down to score a word and up to
-      pass. Motion is read live on your device and never stored or sent anywhere.</div>
-
-      <div class="q">Is there any cost, or ads?</div>
-      <div class="a">The app is free with no ads and no in-app purchases.</div>
-
-      <div class="q">How is my data handled?</div>
-      <div class="a">We collect nothing. See our <a href="privacy.html">Privacy Policy</a>.</div>
-    </section>
-  </main>
-
-  <p class="foot">© 2026 Reach Labs · <a href="privacy.html">Privacy Policy</a></p>
 </body>
 </html>
