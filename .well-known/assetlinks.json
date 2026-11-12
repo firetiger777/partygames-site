@@ -1,0 +1,24 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.polargamesinc.cantsay",
+      "sha256_cert_fingerprints": [
+        "A5:DC:F4:44:10:2A:21:CC:95:58:05:34:83:15:B2:71:49:34:DA:8C:6F:FF:D3:CC:FB:71:A5:E7:A7:7E:98:5B",
+        "5D:41:4D:EE:82:E7:B6:98:6C:8A:F0:4A:75:5F:34:54:9A:D3:23:9F:77:13:5D:8E:20:94:97:2A:3F:C3:42:DA"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.polargamesinc.funpartygames",
+      "sha256_cert_fingerprints": [
+        "2C:F4:B9:6F:80:C9:87:EC:00:59:6F:BD:BC:BF:EA:9B:67:00:1B:10:2E:D0:DB:9B:5A:D1:70:B8:A3:04:14:08",
+        "5D:41:4D:EE:82:E7:B6:98:6C:8A:F0:4A:75:5F:34:54:9A:D3:23:9F:77:13:5D:8E:20:94:97:2A:3F:C3:42:DA"
+      ]
+    }
+  }
+]

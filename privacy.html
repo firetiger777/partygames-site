@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Party Games Privacy Policy</title>
-<meta name="description" content="Privacy policy for the Party Games app by Polar Games Inc. No data collected, works fully offline.">
+<meta name="description" content="Privacy policy for the Party Games app by Polar Games Inc. No accounts, no ads, no analytics, no tracking. Online rooms sync only what the game needs.">
 <link rel="canonical" href="https://polargamesinc.com/privacy.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
@@ -46,49 +46,95 @@
   <header class="hero">
     <div class="kicker">PARTY GAMES</div>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: June 22, 2026</div>
+    <div class="updated">Last updated: November 11, 2026</div>
   </header>
 
   <main class="wrap">
-    <div class="tldr">Party Games does not collect, store, transmit, or share any personal data.
-      No accounts, no analytics, no advertising, no servers. The app works fully offline.</div>
+    <div class="tldr">Party Games has no accounts, no analytics, no advertising, and no tracking. The
+      pass-and-play games run entirely on your device. When you play one of the online games, the
+      nickname you type and what you enter during that game are synced through our game server and
+      shared only with the players in your room. Room data is deleted when the room closes.</div>
 
-    <h2>Information we collect</h2>
-    <p><strong>None.</strong> We do not collect any personal information about you. Specifically:</p>
+    <h2>Pass-and-play games</h2>
+    <p>The Scale, Can't Say, What am I? and Alien Language are played on a single phone. They work
+      offline and send nothing off your device.</p>
+
+    <h2>Information used to run an online game</h2>
+    <p>The online games (for example Can't Say Online, Draw-It Online, Keyphrase and Detective) let
+      everyone join a room from their own phone. To make that work, the app sends a small amount of
+      gameplay data to our realtime game database:</p>
     <ul>
-      <li>We do <strong>not</strong> ask you to create an account or provide a name, email, or identifier.</li>
-      <li>We do <strong>not</strong> use analytics, tracking, or advertising SDKs.</li>
-      <li>We do <strong>not</strong> collect device identifiers, location, contacts, photos, or usage data.</li>
-      <li>The app does <strong>not</strong> send any information off your device.</li>
+      <li><strong>The nickname you enter.</strong> It is free text you choose, it is not verified,
+        and it is shown only to the other players in your room. It does not have to be your real
+        name.</li>
+      <li><strong>What you enter during the game.</strong> Depending on the game, that can be a short
+        clue, an answer, the text of a card you write, a vote, or the lines of a drawing. It is shown
+        only to the players in your room.</li>
+      <li><strong>Live game state.</strong> The room code, teams, scores, turns, and whether each
+        player is connected. This keeps every phone in the room in sync.</li>
+      <li><strong>A random player id.</strong> The app creates a random id the first time it runs and
+        keeps it on your phone. It is used as your seat in a room so you can reconnect to the same
+        seat if your connection drops. It is not your device's advertising identifier and is not
+        linked to who you are.</li>
+    </ul>
+    <p>This data exists to run your game session and for nothing else:</p>
+    <ul>
+      <li>It is visible only to people in your room. Rooms are private; joining requires the
+        4-letter room code or an invite link from the host.</li>
+      <li>It is <strong>deleted when the room closes</strong> (when the game ends or the players
+        leave).</li>
+      <li>It is <strong>not linked to your identity</strong>. There are no accounts, and we do not
+        collect email addresses, phone numbers, or anything that ties a nickname to a person.</li>
+      <li>It is never used for advertising, profiling, or analytics, and it is never sold or shared
+        with anyone.</li>
+    </ul>
+
+    <h2>Service provider</h2>
+    <p>Online room data is synced through <strong>Firebase Realtime Database</strong>, a hosting
+      service operated by Google LLC, acting as our data processor. Data is encrypted in transit
+      (TLS). Google's own privacy policy is available at
+      <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.
+      We do not use Firebase Analytics, Google Ads, or any other Google data products.</p>
+
+    <h2>Invite links</h2>
+    <p>A host can share an invite link to their room through the phone's share sheet. The link only
+      contains the game and the room code. If you install the app from an invite link, the app checks
+      once, on its first launch, for that room code so it can fill it in for you: on Android it reads
+      the install referrer from Google Play, and on iPhone it looks at the clipboard (iOS shows a
+      paste notice when it does). The code is used on your device only, to join that room.</p>
+
+    <h2>What we do NOT collect</h2>
+    <ul>
+      <li>No accounts, sign-ups, emails, or passwords.</li>
+      <li>No analytics, crash reporting, tracking, or advertising SDKs.</li>
+      <li>No location, contacts, photos, microphone, or camera access.</li>
+      <li>No purchases: every game in the app is included.</li>
     </ul>
 
     <h2>Information stored on your device</h2>
-    <p>To make the app work, a small amount of data is saved <strong>locally on your device only</strong>
-      and is never transmitted anywhere:</p>
-    <ul>
-      <li>Your sound on/off (mute) preference.</li>
-      <li>In-progress game state (teams, rounds, scores), so a game can be resumed if the app is closed
-        mid-session.</li>
-    </ul>
-    <p>You can erase this data at any time by deleting the app.</p>
+    <p>A small amount of data is saved locally on your phone only: your sound on/off preference,
+      in-progress game state so a game can be resumed if the app closes, your random player id, your
+      last room so you can reconnect, and whether an invite has already been handled. Deleting the
+      app erases all of it.</p>
 
     <h2>Device sensors and permissions</h2>
     <ul>
-      <li><strong>Motion &amp; orientation (accelerometer):</strong> The game "What am I?" reads the
-        phone's tilt so you can tilt down to score a word and up to pass. This motion data is used
-        live, on your device, only while you are playing that game. It is never recorded, stored, or
+      <li><strong>Motion &amp; orientation (accelerometer):</strong> "What am I?" reads the phone's
+        tilt so you can tilt down to score a word and up to pass. This motion data is used live, on
+        your device, only while you play that game. It is never recorded, stored, or
         transmitted.</li>
       <li>The app does not use the microphone, camera, location, or contacts.</li>
     </ul>
 
     <h2>Children's privacy</h2>
-    <p>Party Games is suitable for all ages and collects no data from anyone, including children.
-      Because we collect no personal information, we do not knowingly collect personal information
-      from children under 13 (or the equivalent minimum age in your jurisdiction).</p>
+    <p>Party Games has no accounts, no chat, and no public matchmaking. In the online games, the only
+      player-provided data is what players enter inside a private room, and it is deleted when the
+      room closes. We do not knowingly collect personal information from children under 13 (or the
+      equivalent minimum age in your jurisdiction).</p>
 
     <h2>Changes to this policy</h2>
-    <p>If we ever change how the app handles data, we will update this policy and the
-      "Last updated" date above.</p>
+    <p>If we change how the app handles data, we will update this policy and the "Last updated"
+      date above.</p>
 
     <h2>Contact</h2>
     <p>Questions about this policy? Contact us at

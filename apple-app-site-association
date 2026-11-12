@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "FY2U7KR6PP.com.polargamesinc.cantsay",
+          "FY2U7KR6PP.com.polargamesinc.funpartygames"
+        ],
+        "components": [
+          { "/": "/join/*", "comment": "Room invite links (PRD 35)" },
+          { "/": "/join", "comment": "Room invite links, bare path" }
+        ]
+      }
+    ]
+  }
+}
